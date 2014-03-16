@@ -1,0 +1,4 @@
+{
+	"copy": {"category": "block", "sounds": ["copy"]},
+	"paint": {"category": "block", "sounds": ["paint1", "paint2", "paint3"]}
+}
