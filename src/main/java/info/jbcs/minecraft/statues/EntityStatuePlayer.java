@@ -1,5 +1,7 @@
 package info.jbcs.minecraft.statues;
 
+import java.util.UUID;
+
 import com.mojang.authlib.GameProfile;
 
 import net.minecraft.block.Block;
@@ -24,7 +26,11 @@ public class EntityStatuePlayer extends EntityPlayer {
 	StatueParameters		pose;
 
 	public EntityStatuePlayer(World world, String username) {
-		super(world, new GameProfile("IgnoreMeIAmAnAutomaticMaiden", username));
+		super(world, new GameProfile(UUID.fromString("a9cb469c-f43d-4925-946d-c85a90e58a15"), username));
+		// Massive hack alert!
+		// This makes the RendererLivingEntity checks fail, and thus
+		// no nametag is rendered!
+		this.riddenByEntity = this;
 	}
 
 	@Override
@@ -65,7 +71,7 @@ public class EntityStatuePlayer extends EntityPlayer {
 		AbstractTexture tex = (AbstractTexture) texturemanager.getTexture(skin);
 
 		if (tex == null) {
-			tex = new StatueTextureDownloaded(skin, AbstractClientPlayer.getSkinUrl(name), fallbackSkin, new ImageStatueBufferDownload(this, block, side, meta, name+"."+Block.getIdFromBlock(block)+"."+meta));
+			tex = new StatueTextureDownloaded(skin, Statues.skinServerLocation + name + ".png", fallbackSkin, new ImageStatueBufferDownload(this, block, side, meta, name+"."+Block.getIdFromBlock(block)+"."+meta));
 			texturemanager.loadTexture(skin, tex);
 		}
 

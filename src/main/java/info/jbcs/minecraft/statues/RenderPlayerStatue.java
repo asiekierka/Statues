@@ -2,6 +2,9 @@ package info.jbcs.minecraft.statues;
 
 import static net.minecraftforge.client.IItemRenderer.ItemRenderType.EQUIPPED;
 import static net.minecraftforge.client.IItemRenderer.ItemRendererHelper.BLOCK_3D;
+
+import java.util.UUID;
+
 import net.minecraft.block.Block;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelRenderer;
@@ -18,12 +21,18 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTUtil;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.ForgeHooksClient;
 import net.minecraftforge.client.IItemRenderer;
 import net.minecraftforge.client.MinecraftForgeClient;
 
 import org.lwjgl.opengl.GL11;
+
+import com.mojang.authlib.GameProfile;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class RenderPlayerStatue extends RendererLivingEntity {
 	public static final ResourceLocation	steveTextures	= new ResourceLocation("textures/entity/steve.png");
@@ -250,13 +259,13 @@ public class RenderPlayerStatue extends RendererLivingEntity {
 			} else if (stack.getItem().equals(Items.skull)) {
 				f2 = 1.0625F;
 				GL11.glScalef(f2, -f2, -f2);
-				String s = "";
-
-				if (stack.hasTagCompound() && stack.getTagCompound().hasKey("SkullOwner")) {
-					s = stack.getTagCompound().getString("SkullOwner");
+				GameProfile s = null;
+				
+				if (stack.hasTagCompound() && stack.getTagCompound().hasKey("Owner")) {
+					s = NBTUtil.func_152459_a(stack.getTagCompound().getCompoundTag("Owner"));
 				}
-
-				TileEntitySkullRenderer.field_147536_b.func_147530_a(-0.5F, 0.0F, -0.5F, 1, 180.0F, stack.getItemDamage(), s);
+				
+				TileEntitySkullRenderer.field_147536_b.func_152674_a(-0.5F, 0.0F, -0.5F, 1, 180.0F, stack.getItemDamage(), s);
 			}
 
 			GL11.glPopMatrix();
@@ -265,7 +274,6 @@ public class RenderPlayerStatue extends RendererLivingEntity {
 		renderItemInRightArm(player);
 		renderItemInLeftArm(player);
 	}
-
 	/**
 	 * Queries whether should render the specified pass or not.
 	 */

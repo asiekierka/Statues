@@ -144,4 +144,10 @@ public class ImageStatueBufferDownload implements IImageBuffer {
 		return false;
 	}
 
+	@Override
+	public void func_152634_a() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -30,7 +30,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid = "statues", name = "Statues", version = "2.1.1", dependencies = "required-after:asielib")
+@Mod(modid = "statues", name = "Statues", version = "2.1.3", dependencies = "required-after:asielib")
 public class Statues{
 	static Configuration				config;
 
@@ -55,6 +55,8 @@ public class Statues{
 	public static GuiHandler	guiStatue;
 	public static GuiHandler	guiSculpt;
 
+	public static String skinServerLocation;
+	
 	public static boolean		debugImages;
 
 	@EventHandler
@@ -63,11 +65,11 @@ public class Statues{
 		config = new Configuration(configFile);
 		config.load();
 
-		statue				= new BlockStatue(Material.rock).setHardness(1F).setResistance(1F).setBlockName("statue").setStepSound(Block.soundTypeStone);
-		showcase			= new BlockShowcase(Material.wood).setHardness(1F).setResistance(1F).setBlockName("showcase").setStepSound(Block.soundTypeWood);
-		hammer				= new ItemMarteau().setTextureName("statues:marteau").setUnlocalizedName("marteau");
-		itemShowcase		= new ItemShowcase(showcase).setTextureName("statues:itemshowcase").setUnlocalizedName("itemshowcase");
-		itemPalette			= new ItemPalette().setTextureName("statues:palette").setUnlocalizedName("palette");
+		statue				= new BlockStatue(Material.rock).setHardness(1F).setResistance(1F).setBlockName("statues.statue").setStepSound(Block.soundTypeStone);
+		showcase			= new BlockShowcase(Material.wood).setHardness(1F).setResistance(1F).setBlockName("statues.showcase").setStepSound(Block.soundTypeWood);
+		hammer				= new ItemMarteau().setTextureName("statues:marteau").setUnlocalizedName("statues.marteau");
+		itemShowcase		= new ItemShowcase(showcase).setTextureName("statues:itemshowcase").setUnlocalizedName("statues.showcase");
+		itemPalette			= new ItemPalette().setTextureName("statues:palette").setUnlocalizedName("statues.palette");
 		
 		GameRegistry.registerBlock(statue, "statues.statue");
 		GameRegistry.registerBlock(showcase, "statues.showcase");
@@ -80,16 +82,17 @@ public class Statues{
 	
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
+		skinServerLocation = config.get("general", "skin server location", "http://skins.minecraft.net/MinecraftSkins/", "Download skins from this path.").getString();
 		debugImages = config.get("general", "debug skins", false, "Save generated skins to files.").getBoolean(false);
 		
 		packet = new PacketHandler("statues", new Packets(), new Packets());
 		
-		LanguageRegistry.addName(statue, "Statue");
+		/*LanguageRegistry.addName(statue, "Statue");
 		LanguageRegistry.addName(showcase, "Showcase");
 		LanguageRegistry.addName(itemShowcase, "Showcase");
 		
 		LanguageRegistry.addName(hammer, "Hammer");
-		LanguageRegistry.addName(itemPalette, "Palette");
+		LanguageRegistry.addName(itemPalette, "Palette");*/
 		
         GameRegistry.registerTileEntity(TileEntityStatue.class, "TileEntityStatue");
         GameRegistry.registerTileEntity(TileEntityShowcase.class, "TileEntityShowcase");

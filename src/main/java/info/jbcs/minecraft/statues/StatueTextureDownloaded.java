@@ -1,6 +1,7 @@
 package info.jbcs.minecraft.statues;
 
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 
@@ -11,6 +12,7 @@ import net.minecraft.client.renderer.texture.AbstractTexture;
 import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.client.resources.IResourceManager;
+import net.minecraft.client.resources.SkinManager;
 import net.minecraft.util.ResourceLocation;
 
 public class StatueTextureDownloaded extends AbstractTexture {
@@ -35,12 +37,18 @@ public class StatueTextureDownloaded extends AbstractTexture {
 		TextureManager texturemanager = Minecraft.getMinecraft().getTextureManager();
 		data = (ThreadDownloadImageData) texturemanager.getTexture(origLocation);
 		if (data == null) {
-			data = new ThreadDownloadImageData(url, null, new IImageBuffer() {
+			data = new ThreadDownloadImageData((File)null, url, SkinManager.field_152793_a, new IImageBuffer() {
 				@Override
 				public BufferedImage parseUserSkin(BufferedImage image) {
 					bufferedImage=image;
 					playerTextures.put(url, image);
 					return image;
+				}
+
+				@Override
+				public void func_152634_a() {
+					// TODO Auto-generated method stub
+					
 				}
 			});
 			texturemanager.loadTexture(origLocation, data);
