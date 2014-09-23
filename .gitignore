@@ -1,3 +1,13 @@
-.gradle
-build
-mods
+/*
+
+# folders
+!/gradle
+!/src
+!/libs
+
+# files
+!/.gitignore
+!/README.md
+!/build.gradle
+!/gradlew
+!/gradlew.bat

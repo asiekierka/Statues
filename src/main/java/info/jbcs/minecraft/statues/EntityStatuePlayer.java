@@ -1,12 +1,8 @@
 package info.jbcs.minecraft.statues;
 
-import java.util.UUID;
-
 import com.mojang.authlib.GameProfile;
-
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.entity.AbstractClientPlayer;
 import net.minecraft.client.renderer.texture.AbstractTexture;
 import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.entity.player.EntityPlayer;
@@ -16,6 +12,8 @@ import net.minecraft.util.IChatComponent;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StringUtils;
 import net.minecraft.world.World;
+
+import java.util.UUID;
 
 public class EntityStatuePlayer extends EntityPlayer {
 	static ResourceLocation	emptySkin	= new ResourceLocation("statues:textures/steve.png");

@@ -17,16 +17,15 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "2.1.3"
+version = "2.1.4"
 group= "info.jbcs.minecraft.statues" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "statues"
 
 dependencies {
-    compile files("lib/AsieLib-1.7-0.2.5-deobf.jar")
 }
 
 minecraft {
-    version = "1.7.10-10.13.0.1176"
+    version = "1.7.10-10.13.0.1206"
     assetDir = "eclipse/assets"
 }
 processResources

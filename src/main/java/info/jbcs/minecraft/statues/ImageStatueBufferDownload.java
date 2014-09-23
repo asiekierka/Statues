@@ -1,17 +1,16 @@
 package info.jbcs.minecraft.statues;
 
-import java.awt.Graphics;
+import net.minecraft.block.Block;
+import net.minecraft.client.renderer.IImageBuffer;
+import net.minecraft.init.Blocks;
+
+import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 import java.awt.image.ImageObserver;
 import java.io.File;
 import java.io.IOException;
-
-import javax.imageio.ImageIO;
-
-import net.minecraft.block.Block;
-import net.minecraft.client.renderer.IImageBuffer;
-import net.minecraft.init.Blocks;
 
 public class ImageStatueBufferDownload implements IImageBuffer {
 	EntityStatuePlayer player;

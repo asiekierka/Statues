@@ -1,7 +1,5 @@
 package info.jbcs.minecraft.statues;
 
-import java.util.Random;
-
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.EffectRenderer;
@@ -10,6 +8,8 @@ import net.minecraft.client.renderer.texture.AbstractTexture;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
+
+import java.util.Random;
 
 public class GeneralStatueClient {
 	static Random rand=new Random();

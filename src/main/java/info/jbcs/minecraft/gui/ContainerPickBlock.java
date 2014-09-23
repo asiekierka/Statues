@@ -1,13 +1,12 @@
 package info.jbcs.minecraft.gui;
 
 import info.jbcs.minecraft.utilities.InventoryStatic;
-
-import java.util.ArrayList;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+
+import java.util.ArrayList;
 
 public class ContainerPickBlock extends Container
 {

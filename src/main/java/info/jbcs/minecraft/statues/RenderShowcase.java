@@ -17,7 +17,6 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.tileentity.TileEntity;
-
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 

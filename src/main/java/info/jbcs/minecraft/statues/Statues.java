@@ -1,13 +1,14 @@
 package info.jbcs.minecraft.statues;
 
-
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
 import info.jbcs.minecraft.utilities.DummyContainer;
-import info.jbcs.minecraft.utilities.General;
 import info.jbcs.minecraft.utilities.GuiHandler;
-
-import java.io.File;
-
-import pl.asie.lib.network.PacketHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
@@ -20,17 +21,11 @@ import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.common.MinecraftForge;
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.Mod.Instance;
-import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
+import pl.asie.lib.network.PacketHandler;
 
-@Mod(modid = "statues", name = "Statues", version = "2.1.3", dependencies = "required-after:asielib")
+import java.io.File;
+
+@Mod(modid = "statues", name = "Statues", version = "2.1.4", dependencies = "required-after:asielib")
 public class Statues{
 	static Configuration				config;
 
@@ -97,14 +92,13 @@ public class Statues{
         GameRegistry.registerTileEntity(TileEntityStatue.class, "TileEntityStatue");
         GameRegistry.registerTileEntity(TileEntityShowcase.class, "TileEntityShowcase");
         
-		GameRegistry.addShapedRecipe(new ItemStack(hammer, 1), new Object[] { " I ", " SI", "S  ", Character.valueOf('S'), Items.stick, Character.valueOf('I'), Items.iron_ingot });
-		GameRegistry.addShapedRecipe(new ItemStack(itemShowcase, 1), new Object[] { "GGG", "W W", "S S", Character.valueOf('S'), Items.stick, Character.valueOf('W'), Blocks.planks, Character.valueOf('G'), Blocks.glass_pane});
-		GameRegistry.addShapedRecipe(new ItemStack(itemPalette, 1), new Object[] { "GB", "RW",
-			Character.valueOf('W'), Blocks.planks,
-			Character.valueOf('R'), new ItemStack(Items.dye,1,1),
-			Character.valueOf('G'), new ItemStack(Items.dye,1,2),
-			Character.valueOf('B'), new ItemStack(Items.dye,1,4),
-		});
+		GameRegistry.addShapedRecipe(new ItemStack(hammer, 1), " I ", " SI", "S  ", 'S', Items.stick, 'I', Items.iron_ingot);
+		GameRegistry.addShapedRecipe(new ItemStack(itemShowcase, 1), "GGG", "W W", "S S", 'S', Items.stick, 'W', Blocks.planks, 'G', Blocks.glass_pane);
+		GameRegistry.addShapedRecipe(new ItemStack(itemPalette, 1), "GB", "RW",
+            'W', Blocks.planks,
+            'R', new ItemStack(Items.dye,1,1),
+            'G', new ItemStack(Items.dye,1,2),
+            'B', new ItemStack(Items.dye,1,4));
 
 		// TODO
 		//MinecraftForge.setBlockHarvestLevel(showcase, "axe", 0);

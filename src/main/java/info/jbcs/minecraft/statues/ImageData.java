@@ -1,17 +1,15 @@
 package info.jbcs.minecraft.statues;
 
+import net.minecraft.block.Block;
+import net.minecraft.client.Minecraft;
+import net.minecraft.util.ResourceLocation;
 
-import java.awt.Graphics;
+import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 import java.io.IOException;
 import java.util.HashMap;
-
-import javax.imageio.ImageIO;
-
-import net.minecraft.block.Block;
-import net.minecraft.client.Minecraft;
-import net.minecraft.util.ResourceLocation;
 
 public class ImageData {
 	static HashMap<Integer,ImageData> blockTextures=new HashMap<Integer,ImageData>();

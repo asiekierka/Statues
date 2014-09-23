@@ -4,20 +4,18 @@
 
 package info.jbcs.minecraft.statues;
 
-import java.util.Random;
-
-import pl.asie.lib.block.TileEntityInventory;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
-import net.minecraft.tileentity.TileEntity;
+import pl.asie.lib.block.TileEntityInventory;
+
+import java.util.Random;
 
 public class TileEntityStatue extends TileEntityInventory {
 	private EntityPlayer	clientPlayer;

@@ -1,21 +1,5 @@
 package info.jbcs.minecraft.utilities.packets;
 
-import info.jbcs.minecraft.utilities.General;
-
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.DataInputStream;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.management.ServerConfigurationManager;
-import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.relauncher.Side;
-
 public abstract class PacketHandler implements Comparable {
 	/*static ArrayList<PacketHandler> items = new ArrayList<PacketHandler>();
 

@@ -1,11 +1,11 @@
 package info.jbcs.minecraft.statues;
 
-import java.util.Random;
-
 import net.minecraft.client.renderer.texture.AbstractTexture;
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
+
+import java.util.Random;
 
 public class EntityTextureFX extends Entity{
 	AbstractTexture texture;

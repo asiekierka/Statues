@@ -4,7 +4,6 @@
 
 package info.jbcs.minecraft.statues;
 
-import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;

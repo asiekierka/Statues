@@ -4,8 +4,8 @@
 
 package info.jbcs.minecraft.statues;
 
-import pl.asie.lib.block.ContainerBase;
 import net.minecraft.entity.player.InventoryPlayer;
+import pl.asie.lib.block.ContainerBase;
 
 public class ContainerStatue extends ContainerBase {
 	TileEntityStatue	tile;

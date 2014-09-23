@@ -4,10 +4,8 @@
 
 package info.jbcs.minecraft.statues;
 
-import pl.asie.lib.block.ContainerBase;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.IInventory;
+import pl.asie.lib.block.ContainerBase;
 
 public class ContainerShowcase extends ContainerBase {
 

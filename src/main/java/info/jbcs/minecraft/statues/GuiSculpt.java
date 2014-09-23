@@ -4,13 +4,6 @@ import info.jbcs.minecraft.gui.GuiEdit;
 import info.jbcs.minecraft.gui.GuiExButton;
 import info.jbcs.minecraft.gui.GuiLabel;
 import info.jbcs.minecraft.gui.GuiScreenPlus;
-import info.jbcs.minecraft.utilities.General;
-import info.jbcs.minecraft.utilities.packets.PacketData;
-
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.util.Random;
-
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.OpenGlHelper;
@@ -18,11 +11,11 @@ import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
-
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
-
 import pl.asie.lib.network.Packet;
+
+import java.util.Random;
 
 public class GuiSculpt extends GuiScreenPlus  {
 	Random rand=new Random();

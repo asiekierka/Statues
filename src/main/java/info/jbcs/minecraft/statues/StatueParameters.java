@@ -1,11 +1,9 @@
 package info.jbcs.minecraft.statues;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
-
-import pl.asie.lib.network.Packet;
 import net.minecraft.nbt.NBTTagCompound;
+import pl.asie.lib.network.Packet;
+
+import java.io.IOException;
 
 public class StatueParameters {
 	float armLeftA;

@@ -5,14 +5,9 @@
 package info.jbcs.minecraft.statues;
 
 import info.jbcs.minecraft.gui.GuiScreenPlus;
-import info.jbcs.minecraft.utilities.packets.PacketData;
-
-import java.io.DataOutputStream;
-import java.io.IOException;
-
-import pl.asie.lib.network.Packet;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.world.World;
+import pl.asie.lib.network.Packet;
 
 public class GuiStatue extends GuiScreenPlus {
 	public final InventoryPlayer	invg;

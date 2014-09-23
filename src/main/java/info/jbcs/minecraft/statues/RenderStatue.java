@@ -7,7 +7,6 @@ package info.jbcs.minecraft.statues;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
-
 import org.lwjgl.opengl.GL11;
 
 public class RenderStatue extends TileEntitySpecialRenderer {

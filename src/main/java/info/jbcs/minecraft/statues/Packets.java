@@ -1,17 +1,13 @@
 package info.jbcs.minecraft.statues;
 
-import info.jbcs.minecraft.utilities.General;
-import info.jbcs.minecraft.utilities.packets.PacketData;
-import info.jbcs.minecraft.utilities.packets.PacketHandler;
-
-import java.io.IOException;
-
-import pl.asie.lib.network.MessageHandlerBase;
-import pl.asie.lib.network.Packet;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.network.INetHandler;
 import net.minecraft.tileentity.TileEntity;
+import pl.asie.lib.network.MessageHandlerBase;
+import pl.asie.lib.network.Packet;
+
+import java.io.IOException;
 
 public class Packets extends MessageHandlerBase {
 	public static final int SCULPTURE_CREATION = 1;
